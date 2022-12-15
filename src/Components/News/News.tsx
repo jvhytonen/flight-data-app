@@ -11,11 +11,13 @@ const News = (props: NewsType) => {
         <div className='w-full h-full flex flex-col'>
             <div className='w-full'>
                 {/**Aria label is here for the test runs. This is a way to test that img with url is shown as should. */}
-                <img aria-label={props.urlToImage} src={props.urlToImage} alt='' />
+                <img className='max-h-full w-auto' aria-label={props.urlToImage} src={props.urlToImage} alt='' />
             </div>
             <div className='w-full pt-3 px-3'>
-                <p className='text-2xl uppercase'>{props.title}</p>
-                <p className='text-xl'>{props.description}</p>
+            {props.title.length + props.description.length < 160 ? 
+            <>
+                <p className='text-2xl uppercase '>{props.title}</p>
+                <p className='text-xl'>{props.description}</p> </> : <p className='text-3xl'>{props.title}</p>}
             </div>
         </div>
     )

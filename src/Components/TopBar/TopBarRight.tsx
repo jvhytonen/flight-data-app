@@ -72,7 +72,7 @@ const TopBarRight = (props: SchedulesType) => {
         return () => {
             window.clearTimeout(timer)
         }
-    })
+    },[])
 
     return (
         <div ref={div} className='flex w-1/2 flex-col'>

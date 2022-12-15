@@ -12,7 +12,7 @@ export interface AppType {
     body: {
         flights?: TimeTableType[]
         news?: NewsType[]
-        publicTransport: ScheduleItemType[]
+        publicTransport?: ScheduleItemType[]
         weather: WeatherComponentType
         adsInfo?: AdsInfoType[]
     }
@@ -26,7 +26,7 @@ const View = (props: ViewType) => {
     return (
         <div className='w-full h-full'>
             <div className='h-[8%] w-full items-center justify-center shadow-md Topbar'>
-                {props.data.body.publicTransport === undefined ? <h1>No data</h1> : <TopBar publicTransport={props.data.body.publicTransport} />}
+                {props.data.body.publicTransport === undefined ? <TopBar /> : <TopBar publicTransport={props.data.body.publicTransport} />}
             </div>
             <div className='h-[92%] w-full flex shadow-md'>
                 <div className='w-1/2 h-full relative justify-around Lefthalf text-white'>
