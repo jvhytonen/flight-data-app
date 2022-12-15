@@ -18,7 +18,7 @@ const Weather = (props: WeatherComponentType) => {
     const iconTomorrow = ICONURL + props.tomorrow.icon + '.svg'
     return (
         <div className='w-full h-full Weather rounded'>
-            <div className='w-full h-[20%] text-center text-4xl'>
+            <div className='w-full h-[20%] text-center text-4xl underline'>
                 <p>Weather in</p>
                 <p>{props.location}</p>
             </div>

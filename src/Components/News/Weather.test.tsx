@@ -1,5 +1,5 @@
 import Weather from "./Weather";
-import {exmplFormattedWeatherData} from '../../tests/weather-test-data'
+import {exmplFormattedWeatherData} from '../../test-variables/weather-test-data'
 import { render, screen } from '@testing-library/react'
 
 it('shows the location as Helsinki as in the test data', () => {

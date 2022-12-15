@@ -1,5 +1,5 @@
 import TopBar from "./TopBar";
-import { exmplPTReadyData } from '../../tests/public-transport-test-data'
+import { exmplPTReadyData } from '../../test-variables/public-transport-test-data'
 import { render, screen } from '@testing-library/react'
 
 

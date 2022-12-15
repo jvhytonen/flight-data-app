@@ -1,6 +1,6 @@
 import NewsContainer from "./NewsContainer";
-import {exampleReadyData} from '../../tests/news-test-data'
-import {exmplFormattedWeatherData} from '../../tests/weather-test-data'
+import {exampleReadyData} from '../../test-variables/news-test-data'
+import {exmplFormattedWeatherData} from '../../test-variables/weather-test-data'
 import { render, screen } from '@testing-library/react'
 
 it('shows a "No data" -text 2 times if no weather or news data is delivered into the component', () => {

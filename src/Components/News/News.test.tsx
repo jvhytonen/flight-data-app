@@ -1,5 +1,5 @@
 import News from "./News";
-import { exampleReadyData } from '../../tests/news-test-data'
+import { exampleReadyData } from '../../test-variables/news-test-data'
 import { render, screen } from '@testing-library/react'
 
 it('shows all the necessary properties of news', () => {

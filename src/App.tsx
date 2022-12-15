@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import View from './Components/View/View'
-import { fetchApiData, mockFetch } from './Utils/HTTPRequests'
-import Error from './Components/UI/Error'
+import { fetchApiData} from './Utils/HTTPRequests'
 
 type connectAPIType = () => void
 
@@ -11,16 +10,14 @@ const USER_NAME = 'test3'
 function App() {
   // Hooks handling API data and loading of data. 
   const [apiData, setApiData] = useState<any>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(true)
   
 
   const connectApi: connectAPIType = async () => {
     try {
-      const fetchedItems = await mockFetch(USER_NAME)
+      const fetchedItems = await fetchApiData(USER_NAME)
       if (fetchedItems === null) {
         return
       }
-      setIsLoading(false)
       setApiData(fetchedItems)
     }
     catch (err) {
@@ -29,28 +26,25 @@ function App() {
     }
   }
  
-/*   useEffect(() => {
+   useEffect(() => {
     const intervalCall = setInterval(() => {
-      setIsLoading(true)
       console.log('Timeout-made connection')
       connectApi();
-    }, 20000)
+    }, 60000)
     return () => {
       clearInterval(intervalCall)
     }
-  }, []) */
+  }, []) 
 
 
 
-  useEffect(() => {
-      setIsLoading(true)
+/*   useEffect(() => {
       console.log('connecting')
       connectApi();
-  }, [])
-
+  }, []) */
   return (
     <div className="App h-screen w-full">
-      {apiData !== null ? <View data={apiData} /> : <Error message={`${isLoading ? 'Loading... ' : 'Something went wrong'}`} />}
+      {apiData !== null ? <View data={apiData} /> : null}
     </div>
   );
 }

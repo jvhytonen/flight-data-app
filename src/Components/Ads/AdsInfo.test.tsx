@@ -1,5 +1,5 @@
 import AdsInfo from "./AdsInfo";
-import { infoOnly, adsOnly } from '../../tests/ads-info-test-data'
+import { infoOnly, adsOnly } from '../../test-variables/ads-info-test-data'
 import { render, screen } from '@testing-library/react'
 
 it('will show content via Info-component when datatype is info', () => {

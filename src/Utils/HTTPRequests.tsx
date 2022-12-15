@@ -1,6 +1,9 @@
 // Test data for test purposes
-import { exmplPTReadyData } from '../tests/public-transport-test-data'
-import { exampleReadyData as testNews } from '../tests/news-test-data'
+import { exmplPTReadyData } from '../test-variables/public-transport-test-data'
+import { exampleReadyData as testNews } from '../test-variables/news-test-data'
+import { testFlightData } from '../test-variables/flights-data-test'
+import { testAdsInfo, adsOnly } from '../test-variables/ads-info-test-data'
+import { exmplFormattedWeatherData } from '../test-variables/weather-test-data'
 
 type fetchDataType = (user:string) => object | string
 
@@ -21,12 +24,15 @@ export const fetchApiData: fetchDataType = async (user) => {
 
 // For development purposes in order not to use API-calls all the time. 
 
-export const mockFetch: fetchDataType = async (user) => {
+/* export const mockFetch: fetchDataType = async (user) => {
     const data = {
             body: {
                 publicTransport: exmplPTReadyData,
-                news: testNews
+                news: testNews,
+                flights: testFlightData,
+                adsInfo: adsOnly,
+                weather: exmplFormattedWeatherData
             }
         }
-    return data
-}
+    return data 
+}*/
