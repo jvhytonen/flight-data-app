@@ -5,7 +5,7 @@ import { fetchApiData} from './Utils/HTTPRequests'
 
 type connectAPIType = () => void
 
-const USER_NAME = 'helsinki'
+const USER_NAME = 'hotel_tallinn'
 
 function App() {
   // Hooks handling API data and loading of data. 

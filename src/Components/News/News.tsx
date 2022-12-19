@@ -14,6 +14,8 @@ const News = (props: NewsType) => {
                 <img className='max-h-full w-auto' aria-label={props.urlToImage} src={props.urlToImage} alt='' />
             </div>
             <div className='w-full pt-3 px-3'>
+             {/*    Sometimes the News-API gives very long titles and descriptions. This check makes sure the text won't overflow by showing only 
+                the title. */}
             {props.title.length + props.description.length < 160 ? 
             <>
                 <p className='text-2xl uppercase '>{props.title}</p>

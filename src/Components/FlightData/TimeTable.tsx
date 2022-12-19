@@ -14,6 +14,7 @@ export interface DepDataItemsType {
     estimated?: string | null
     terminal?: string
     gate?: string
+    status: string
 }
 
 export interface ArrDataItemsType {
@@ -26,6 +27,7 @@ export interface ArrDataItemsType {
     estimated?: string | null
     terminal?: string
     baggage?: string
+    status: string
 }
 
 export interface TimeTableType {
@@ -53,7 +55,7 @@ const TimeTable = (props: TimeTableType) => {
         return (
             <div key={index} style={divHeightStyle} className={'FlightDataTable w-full flex h-[6%] text-3xl'}>
                 <div className='w-[36%] h-full flex items-center justify-center'>
-                    <Time scheduled={item.scheduled} estimated={item.estimated} actual={item.actual} type={props.type} />
+                    <Time scheduled={item.scheduled} estimated={item.estimated} actual={item.actual} type={props.type} status={item.status} />
                 </div>
                 <div className='w-[23%] flex items-center justify-start'>
                     <Airline airline={item.airline} />

@@ -3,14 +3,21 @@ interface TimeType {
     estimated?: string | null | undefined
     actual?: string | null | undefined
     type: string
+    status: string
 }
 const Time = (props: TimeType) => {
     let isDeparted = props.actual === null ? false : true
     let isEstimated = props.estimated === null ? false : true
+    let isCancelled = props.status === 'cancelled' ? true : false
+
     let timeColor:string
     let detailText: string
     let textColor = 'text-white'
-    if (isDeparted) {
+    if (isCancelled) {
+        timeColor = 'bg-red-700'
+        detailText = 'Cancelled '
+    }
+    else if (isDeparted) {
         timeColor = 'bg-green-600'
         detailText = props.type === 'departures' ? 'Departed ' : 'Landed '
     }
@@ -26,8 +33,8 @@ const Time = (props: TimeType) => {
     return (
         <div className='h-full w-full flex items-center justify-around px-2'>
            <div className='w-full h-full flex items-center justify-around'>
-                        <p className='w-[32%]'>{props.scheduled}</p>
-                        <p className={`w-[68%] h-[80%] px-1 flex items-center ${textColor} ${timeColor}`}>{detailText}{props.estimated}</p>
+                        <p className={`w-[32%] ${isCancelled ? 'line-through' : 'no-underline'}`}>{props.scheduled}</p>
+                        <p className={`w-[68%] h-[80%] px-1 flex items-center ${textColor} ${timeColor}`}>{detailText}{isCancelled ? null : props.estimated}</p>
                     </div>
         </div>
     )
