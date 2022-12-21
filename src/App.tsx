@@ -5,7 +5,7 @@ import { fetchApiData} from './Utils/HTTPRequests'
 
 type connectAPIType = () => void
 
-const USER_NAME = 'hotel_tallinn'
+const USER_NAME = 'helsinki'
 
 function App() {
   // Hooks handling API data and loading of data. 
@@ -30,7 +30,7 @@ function App() {
     const intervalCall = setInterval(() => {
       console.log('Connecting...')
       connectApi();
-    }, 120000)
+    }, 180000)
     return () => {
       clearInterval(intervalCall)
     }

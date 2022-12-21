@@ -1,3 +1,5 @@
+import React from "react"
+
 interface WeatherItemsType {
     temp: number
     icon: string

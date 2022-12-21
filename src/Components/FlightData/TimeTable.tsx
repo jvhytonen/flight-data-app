@@ -1,3 +1,4 @@
+import React from "react"
 import Airline from "./Airline"
 import FlightNumber from "./FlightNumber"
 import Time from "./Time"

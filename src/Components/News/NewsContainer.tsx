@@ -1,7 +1,7 @@
 import News, { NewsType } from "./News";
 import Weather, {WeatherComponentType} from "./Weather";
 import Error from "../UI/Error";
-import { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 interface NewsArrType {
     news?: NewsType[]

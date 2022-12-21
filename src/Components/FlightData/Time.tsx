@@ -1,3 +1,5 @@
+import React from "react"
+
 interface TimeType {
     scheduled: string
     estimated?: string | null | undefined
