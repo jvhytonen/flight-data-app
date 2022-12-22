@@ -13,9 +13,9 @@ const TopBar = (props: TopBarType) => {
             <div className='w-1/2 h-full flex items-center justify-around'>
                 <TopBarLeft />
             </div>
-            {props.publicTransport !== undefined || props.publicTransport !== null ?
+            {props.publicTransport ?
                 <div className='w-1/2 h-full flex items-center justify-around'>
-                    <p>Next trains to city center:</p>
+                   <p>Next trains to city center:</p>
                     <TopBarRight publicTransport={props.publicTransport}/> 
                 </div> : null}
         </div>
