@@ -1,4 +1,4 @@
-import React from "react"
+
 
 interface TimeType {
     scheduled: string
@@ -8,10 +8,16 @@ interface TimeType {
     status: string
 }
 const Time = (props: TimeType) => {
-    let isDeparted = props.actual === null ? false : true
+    // All departed/landed flights are shown on green background color.
+    // Most flights have actual departure/arrival time. Not all. 
+    // For flights that have departed without actual time, we simply mark Departed or Landed
+    let hasDepartedWithoutTime = props.type === 'departures' && props.status === 'active' ? true : false
+    let hasArrivedWitoutTime = props.type === 'arrivals' && props.status === 'landed' ? true : false
+    let hasDepartedArrivedWithTime = props.actual === null ? false : true
+    // If the flight is estimated, it will be shown on yellowish background.
     let isEstimated = props.estimated === null ? false : true
     let isCancelled = props.status === 'cancelled' ? true : false
-
+    // The variables behaving according to the rules mentioned above.
     let timeColor:string
     let detailText: string
     let textColor = 'text-white'
@@ -19,7 +25,7 @@ const Time = (props: TimeType) => {
         timeColor = 'bg-red-700'
         detailText = 'Cancelled '
     }
-    else if (isDeparted) {
+    else if (hasDepartedArrivedWithTime || hasDepartedWithoutTime || hasArrivedWitoutTime ) {
         timeColor = 'bg-green-600'
         detailText = props.type === 'departures' ? 'Departed ' : 'Landed '
     }
@@ -28,6 +34,7 @@ const Time = (props: TimeType) => {
         detailText = 'Estimated '
         textColor = 'text-zinc-500'
     }
+    // Most flights still to depart/arrive after many hours are shown without any special backgrounds. 
     else {
         timeColor = ''
         detailText = ''

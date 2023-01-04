@@ -25,7 +25,7 @@ function App() {
       console.log(err)
     }
   }
- //UseEffect for loading data every 60 seconds. 
+ //UseEffect for loading data every 180 seconds. 
    useEffect(() => {
     const intervalCall = setInterval(() => {
       console.log('Connecting...')

@@ -24,7 +24,7 @@ code {
   font-weight: bold;
 } 
 
-.FlightDataTable:nth-child(even) {
+.FlightDataTable:nth-child(odd) {
   background-color: #228EFF ;
 }
 
