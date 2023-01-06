@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Digital signage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Digital signage frontend and backend. In addition: All you need is a computer and screen (size 1920px x 1080px) to show, airport timetables, news, weather etc. Meant to be used in hotels, conference centres and headquarters near airports.  
 
-## Available Scripts
+Examples for different locations:
+Helsinki: http://helsinki-signage.jvhytonen.com.s3-website.eu-north-1.amazonaws.com/
+Tallinn: http://tallinn-signage.jvhytonen.com.s3-website.eu-north-1.amazonaws.com/
+Rovaniemi: http://rovaniemi-signage.jvhytonen.com.s3-website.eu-north-1.amazonaws.com/
 
-In the project directory, you can run:
+## How to start
 
-### `yarn start`
+Use a screen with the size of 1920px x 1080 px and open the link(s) given above.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+OR:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Open Google Chrome -browser. 
+2. Open the dev tools 
+3. Choose "Toggle device toolbar" to adjust the screen size (more info: https://developer.chrome.com/docs/devtools/device-mode/)
+4. Set screen width: 1920px and height 1080px.
+5. This is a signage meant to be hanging on the wall at the hotel lobby or coference room. This is not responsive. 
 
-### `yarn test`
+### Left side
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The left side will show you arrivals and departure flights of the chosen airport.
 
-### `yarn build`
+### Right side
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The right side will show you news, weather forecast, info and advertisements. The upper section consists of news and weather. The lower is the area for advertisements (some random GIF animations and info text regarding hotel gym, breakfast and transportation to the airport as examples).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Topbar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Topbar is showing the weekday. If the signage is meant to be situated near Helsinki Airport, the right part of the topbar is showing next trains departing to city center from the airport's train station. 
 
-### `yarn eject`
+### Data update
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This app fetches the new data every 3mins.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The backend used here is AWS API Gateway, Lambda and DynamoDB. Read more about it here: https://github.com/jvhytonen/signage-aws-lambda
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
