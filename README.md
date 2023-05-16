@@ -2,10 +2,7 @@
 
 Digital signage frontend and backend. In addition: All you need is a computer and screen (size 1920px x 1080px) to show, airport timetables, news, weather etc. Meant to be used in hotels, conference centres and headquarters near airports.  
 
-Examples for different locations:
-Helsinki: http://helsinki-signage.jvhytonen.com.s3-website.eu-north-1.amazonaws.com/
-Tallinn: http://tallinn-signage.jvhytonen.com.s3-website.eu-north-1.amazonaws.com/
-Rovaniemi: http://rovaniemi-signage.jvhytonen.com.s3-website.eu-north-1.amazonaws.com/
+THIS PROJECT IS CURRENTLY OFFLINE!
 
 ## How to start
 
